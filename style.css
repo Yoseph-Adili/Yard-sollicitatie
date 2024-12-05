@@ -1,0 +1,530 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+@keyframes anim1 {
+    0%, 33.33% {
+        opacity: 1;
+    }
+    /* Visible during the first third */
+    33.34%, 100% {
+        opacity: 0;
+    }
+    /* Hidden for the rest of the time */
+}
+
+/* Animation 2: Text 2 visible in the second third */
+@keyframes anim2 {
+    0%, 33.33% {
+        opacity: 0;
+    }
+    /* Hidden during the first third */
+    33.34%, 66.66% {
+        opacity: 1;
+    }
+    /* Visible during the second third */
+    66.67%, 100% {
+        opacity: 0;
+    }
+    /* Hidden for the rest of the time */
+}
+
+/* Animation 3: Text 3 visible in the last third */
+@keyframes anim3 {
+    0%, 66.66% {
+        opacity: 0;
+    }
+    /* Hidden during the first two thirds */
+    66.67%, 100% {
+        opacity: 1;
+    }
+    /* Visible during the last third */
+}
+
+body {
+    width: 100vw;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    height: auto;
+}
+
+@keyframes MoveDownUP {
+    from {
+        transform: translateY(-20%);
+        opacity: 0;
+    }
+}
+
+header {
+    width: 100vw;
+    height: 60px;
+    position: fixed;
+    top: 10px;
+    animation: MoveDownUP 2s;
+    z-index: 5;
+
+}
+
+.logo {
+    width: 10vw;
+    height: 60px;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo svg {
+    height: 90%;
+}
+
+
+.links {
+    width: 100vw;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    gap: 50px;
+}
+
+.links a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.links a:first-of-type {
+    color: black;
+}
+
+.links a:hover {
+    color: #1793AE;
+}
+
+main {
+    width: 100vw;
+    display: flex;
+    overflow: hidden;
+    /*flex-direction: row-reverse;*/
+}
+#button{
+    cursor: pointer;
+}
+
+.leftPart {
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    animation: Show 2s;
+}
+
+@keyframes Show {
+    from {
+        opacity: 0;
+    }
+}
+
+.introduction_text {
+    width: 70%;
+
+}
+
+.introduction_text h1 {
+    font-size: 2.3rem;
+    padding: 0;
+    margin: 0;
+    font-weight: normal;
+}
+
+.introduction_text p {
+    font-size: 1.2rem;
+}
+
+.introduction_text h1 b {
+    color: #1793AE;
+}
+
+.introduction_text h1:nth-of-type(2) span {
+    display: inline-block;
+    width: 25rem;
+    position: relative;
+    top: -2.3rem;
+    right: 0;
+
+}
+
+.introduction_text h1:nth-of-type(2) span b {
+    position: absolute;
+    color: #1793AE;
+    top: 0;
+    margin: 0;
+}
+
+.broep_1 {
+    opacity: 0;
+    animation: anim1 6s;
+
+
+    animation-iteration-count: infinite;
+}
+
+.broep_2 {
+    opacity: 0;
+    animation: anim2 6s;
+
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+}
+
+.broep_3 {
+    opacity: 0;
+    animation: anim3 6s;
+
+
+    animation-iteration-count: infinite;
+}
+
+ul {
+    width: 70%;
+    list-style: none;
+
+}
+
+li {
+    list-style-image: url('data:image/svg+xml,<svg width="1.2rem" height="1.2rem" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="25" cy="25" r="25" fill="%23B5EBE8"/><path d="M14 25L22 33M18.4645 33L35.4645 16" stroke="black" stroke-width="5"/></svg>');
+    color: #1793AE;
+    margin-bottom: 20px;
+}
+
+.rightPart {
+    width: 50vw;
+    background-color: #212529;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.blackBackground {
+    left: 50vw;
+    width: 100vw;
+    background-color: #212529;
+    height: 100vh;
+    position: absolute;
+    animation: leftToRight 5s forwards;
+    display: none;
+    z-index: 3;
+}
+@keyframes transparent {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+@keyframes leftToRight {
+    0% {
+        display: block;
+    }
+    50% {
+        transform: translateX(-100%);
+
+    }
+    100% {
+        transform: translateX(-150%);
+        display: none;
+    }
+}
+@keyframes leftToRight1 {
+    0% {
+        transform: translateX(-150%);
+    }
+    100% {
+
+        display: none;
+    }
+}
+
+#inputArea {
+    width: 50vw;
+    height: 100vh;
+    background-color: white;
+    position: absolute;
+    right: 0;
+    z-index: 1;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#name, #email {
+    width: 100%;
+    height: 30px;
+    border: 1px solid lightgray;
+}
+
+textarea {
+    width: 100%;
+    border: 1px solid lightgray;
+}
+
+button {
+    display: block;
+    border: none;
+    background-color: #45ccc5;
+    border-radius: 15px;
+    font-size: 1rem;
+    color: white;
+    margin: 10px 0 50px 0;
+    padding: 1rem 0.6rem;
+}
+
+button:hover {
+    background-color: #3cb1ad;
+}
+
+button:active {
+    border: 1px solid #51ede4;
+}
+
+#inputArea div:nth-of-type(2) {
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+#inputArea a svg {
+    height: 25px;
+    color: white;
+}
+
+#inputArea a svg path {
+    fill: white;
+}
+
+#inputArea a {
+    text-decoration: none;
+    color: white;
+    background-color: #1793AE;
+    padding: 0.5rem 1rem;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+@keyframes MoveUpDown {
+    from {
+        transform: translateY(20%);
+        opacity: 0;
+    }
+}
+
+.rightPart h1 {
+    color: white;
+    font-size: 3.5rem;
+    text-align: right;
+    width: 50%;
+    padding: 0;
+    margin: 0;
+    animation: MoveUpDown 1.5s ease-out;
+    z-index: 4;
+}
+
+.rightPart h1 span {
+    color: #1793AE;
+}
+
+.rightPart img {
+    width: 50%;
+    animation: MoveUpDown 1.5s ease-out;
+    z-index: 4;
+}
+
+.introduction_text br {
+    display: none;
+}
+
+@media (max-width: 800px) {
+    .input{
+        width: 80%;
+    }
+    #inputArea div:nth-of-type(2) {
+
+        width: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 2rem;
+        flex-direction: column;
+    }
+    #inputArea a {
+        text-decoration: none;
+        color: white;
+        background-color: #1793AE;
+        padding: 0.5rem 1rem;
+        border-radius: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+
+    body {
+
+    }
+
+    .rightPart h1 {
+        color: white;
+        font-size: 2rem;
+        width: 90%;
+    }
+
+    .rightPart img {
+        width: 90%;
+    }
+
+    .introduction_text br {
+        display: block;
+    }
+
+    ul {
+        margin-top: 10px;
+    }
+
+    li {
+        margin-bottom: 0;
+    }
+
+}
+
+@media (max-width: 640px) {
+    button {
+        margin-bottom: 10px;
+    }
+    #inputArea h2{
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+    #inputArea h4{
+        font-size: 1rem;
+
+    }
+    #inputArea div:nth-of-type(2) {
+
+        width: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 10px;
+        flex-direction: column;
+    }
+    #inputArea a {
+font-size: 0.8rem;
+        gap: 5px;
+
+    }
+    * {
+
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        width: 100vw;
+
+    }
+
+    .logo {
+        left: 10px;
+    }
+
+    .links {
+        width: 90%;
+        justify-content: flex-end;
+        gap: 30px;
+    }
+
+    .links a {
+        color: white;
+        font-size: 0.7rem;
+    }
+
+    .links a:first-of-type {
+        color: white;
+        font-size: 0.7rem;
+    }
+
+    .rightPart h1 {
+        color: white;
+        font-size: 2rem;
+        width: 95%;
+    }
+
+    .rightPart img {
+        width: 90%;
+    }
+
+    .introduction_text {
+        width: 90%;
+    }
+
+    .introduction_text h1 {
+        font-size: 1.1rem;
+    }
+
+    .introduction_text p {
+        font-size: 0.7rem;
+    }
+
+    .introduction_text br {
+        display: block;
+    }
+
+    .leftPart {
+        width: 50vw;
+
+
+    }
+
+    .rightPart {
+        width: 50vw;
+
+
+    }
+
+    .introduction_text h1:nth-of-type(2) {
+        margin-bottom: 10px;
+    }
+
+    .introduction_text h1:nth-of-type(2) span {
+        display: block;
+        top: 0;
+    }
+
+    li {
+        font-size: 0.7rem;
+
+    }
+
+    .introduction_text h1:nth-of-type(2) span {
+        width: 100%;
+    }
+}
