@@ -19,6 +19,7 @@ contact.onclick = () => {
         blackBackground.style.animation = 'leftToRight 5s forwards';
         blackBackground.style.zIndex = '3';
         setTimeout(() => {
+            contact.innerHTML="Home";
             rightPartText.style.animation = 'transparent 1.5s ease-out forwards';
             rightPartPhoto.style.animation = 'transparent 1.5s ease-out forwards';
             nav.style.animation = "transparent 1.75s forwards";
@@ -44,6 +45,7 @@ contact.onclick = () => {
         blackBackground.style.zIndex = '3';
 
         setTimeout(() => {
+            contact.innerHTML="Contact";
             rightPartText.style.animation = 'transparent 1.5s ease-out forwards';
             rightPartPhoto.style.animation = 'transparent 1.5s ease-out forwards';
             nav.style.animation = "transparent 1.75s forwards";

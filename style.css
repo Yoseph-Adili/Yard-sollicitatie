@@ -96,6 +96,8 @@ header {
     color: white;
     font-size: 1.1rem;
     font-weight: bold;
+    width: 100px;
+    text-align: center;
 }
 
 .links a:first-of-type {
@@ -112,7 +114,8 @@ main {
     overflow: hidden;
     /*flex-direction: row-reverse;*/
 }
-#button{
+
+#button {
     cursor: pointer;
 }
 
@@ -225,14 +228,16 @@ li {
     display: none;
     z-index: 3;
 }
+
 @keyframes transparent {
-    from{
+    from {
         opacity: 0;
     }
-    to{
+    to {
         opacity: 1;
     }
 }
+
 @keyframes leftToRight {
     0% {
         display: block;
@@ -246,6 +251,7 @@ li {
         display: none;
     }
 }
+
 @keyframes leftToRight1 {
     0% {
         transform: translateX(-150%);
@@ -362,9 +368,10 @@ button:active {
 }
 
 @media (max-width: 800px) {
-    .input{
+    .input {
         width: 80%;
     }
+
     #inputArea div:nth-of-type(2) {
 
         width: 80%;
@@ -374,6 +381,7 @@ button:active {
         gap: 2rem;
         flex-direction: column;
     }
+
     #inputArea a {
         text-decoration: none;
         color: white;
@@ -418,14 +426,17 @@ button:active {
     button {
         margin-bottom: 10px;
     }
-    #inputArea h2{
+
+    #inputArea h2 {
         font-size: 1.5rem;
         margin-bottom: 10px;
     }
-    #inputArea h4{
+
+    #inputArea h4 {
         font-size: 1rem;
 
     }
+
     #inputArea div:nth-of-type(2) {
 
         width: 80%;
@@ -435,11 +446,13 @@ button:active {
         gap: 10px;
         flex-direction: column;
     }
+
     #inputArea a {
-font-size: 0.8rem;
+        font-size: 0.8rem;
         gap: 5px;
 
     }
+
     * {
 
         margin: 0;
@@ -457,14 +470,15 @@ font-size: 0.8rem;
     }
 
     .links {
-        width: 90%;
+        width: 100%;
         justify-content: flex-end;
-        gap: 30px;
+        gap: 5px;
     }
 
     .links a {
         color: white;
         font-size: 0.7rem;
+
     }
 
     .links a:first-of-type {
@@ -475,7 +489,7 @@ font-size: 0.8rem;
     .rightPart h1 {
         color: white;
         font-size: 2rem;
-        width: 95%;
+        width: 90%;
     }
 
     .rightPart img {
